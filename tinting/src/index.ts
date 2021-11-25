@@ -6,9 +6,8 @@ document.body.appendChild(app.view)
 const b:Sprite[]=[]
 
 const total=20
-
-// for(let i=0;i<total;i++){
-    app.loader.add('a','assets/download.png').load((l,r)=>{
+app.loader.add('a','assets/download.png').load((l,r)=>{
+for(let i=0;i<total;i++){
         const ba=new Sprite(r['a'].texture)
         ba.anchor.set(0.5)
         ba.scale.set(0.8+Math.random()*0.3)
@@ -20,9 +19,9 @@ const total=20
 
         (<any>ba).direction=Math.random()*Math.PI*2;
         (<any>ba).turingSpeed=Math.random()-0.8;
-        (<any>ba).speed=Math.random()*2;
+        (<any>ba).speed=2+Math.random()*2;
         b.push(ba)
 
         app.stage.addChild(ba)
-    })
-// }
+    }
+})
